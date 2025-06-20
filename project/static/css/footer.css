@@ -1,0 +1,19 @@
+footer{
+    background-color: #CDD5DD;
+    height: 851px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#footer-elipse{
+    position: absolute;
+    top: -500px;
+    width: 140%;
+    height: 835px;
+    background-color: white;
+    border-radius: 100%;
+}

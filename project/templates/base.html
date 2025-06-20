@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/footer.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/logo.css')}}">
+</head>
+<body>
+    <header>
+        <nav id = 'links'>
+            <a href="/shop/">КАТАЛОГ</a>
+            <a href="/about_us/">ПРО НАС</a>
+            <a href="/contacts/">КОНТАКТИ</a>
+        </nav>
+        <div id="name-site">
+            <p id="name">DRONES</p> 
+            <div id="name-elipse"></div>
+        </div>
+        <div id="icons">
+            <svg id = 'cartIcon' viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.46447 1.46447C6.40215 0.526784 7.67392 0 9 0C10.3261 0 11.5979 0.526784 12.5355 1.46447C13.4732 2.40215 14 3.67392 14 5V6H16C16.5201 6 16.9534 6.39866 16.9965 6.91695L17.9965 18.917C18.0198 19.1956 17.9252 19.4713 17.7359 19.6771C17.5465 19.8829 17.2797 20 17 20H1C0.720351 20 0.453476 19.8829 0.264121 19.6771C0.0747659 19.4713 -0.0197664 19.1956 0.00345746 18.917L1.00346 6.91695C1.04665 6.39866 1.47991 6 2 6H4V5C4 3.67392 4.52679 2.40215 5.46447 1.46447ZM4 8V9C4 9.55229 4.44772 10 5 10C5.55229 10 6 9.55229 6 9V8H12V9C12 9.55229 12.4477 10 13 10C13.5523 10 14 9.55229 14 9V8H15.0799L15.9132 18H2.0868L2.92014 8H4ZM12 6H6V5C6 4.20435 6.31607 3.44129 6.87868 2.87868C7.44129 2.31607 8.20435 2 9 2C9.79565 2 10.5587 2.31607 11.1213 2.87868C11.6839 3.44129 12 4.20435 12 5V6Z" fill="#9EA0AA" style="fill:#9EA0AA;fill:color(display-p3 0.6196 0.6275 0.6667);fill-opacity:1;"/></svg>
+            <svg id="userIcon" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C7.20435 2 6.44129 2.31607 5.87868 2.87868C5.31607 3.44129 5 4.20435 5 5C5 5.79565 5.31607 6.55871 5.87868 7.12132C6.44129 7.68393 7.20435 8 8 8C8.79565 8 9.55871 7.68393 10.1213 7.12132C10.6839 6.55871 11 5.79565 11 5C11 4.20435 10.6839 3.44129 10.1213 2.87868C9.55871 2.31607 8.79565 2 8 2ZM4.46447 1.46447C5.40215 0.526784 6.67392 0 8 0C9.32608 0 10.5979 0.526784 11.5355 1.46447C12.4732 2.40215 13 3.67392 13 5C13 6.32608 12.4732 7.59785 11.5355 8.53553C10.5979 9.47322 9.32608 10 8 10C6.67392 10 5.40215 9.47322 4.46447 8.53553C3.52678 7.59785 3 6.32608 3 5C3 3.67392 3.52678 2.40215 4.46447 1.46447ZM2.34315 13.3431C3.84344 11.8429 5.87827 11 8 11C10.1217 11 12.1566 11.8429 13.6569 13.3431C15.1571 14.8434 16 16.8783 16 19C16 19.5523 15.5523 20 15 20H1C0.734784 20 0.48043 19.8946 0.292893 19.7071C0.105357 19.5196 0 19.2652 0 19C0 16.8783 0.842855 14.8434 2.34315 13.3431ZM8 13C6.4087 13 4.88258 13.6321 3.75736 14.7574C2.87067 15.6441 2.29016 16.7797 2.08389 18H13.9161C13.7098 16.7797 13.1293 15.6441 12.2426 14.7574C11.1174 13.6321 9.5913 13 8 13Z" fill="#9EA0AA" style="fill:#9EA0AA;fill:color(display-p3 0.6196 0.6275 0.6667);fill-opacity:1;"/></svg>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div id="site-info">
+            <div>
+                <h1>1К+</h1>
+                <p>Успішних відправок</p>
+            </div>
+            <div>
+                <h1>1.5К+</h1>
+                <p>Задоволених клієнтів</p>
+            </div>
+            <div>
+                <h1>24/7</h1>
+                <p>Підтримка клієнтів</p>
+            </div>
+        </div>
+        <h1 id="footer-title">DRONES</h1>
+        <div id="footer-title-elipse"></div>
+        <nav id="footer-links">
+            <a href="/catalog/">КАТАЛОГ</a>
+            <a href="/about_us/">ПРО НАС</a>
+            <a href="/contacts/">КОНТАКТИ</a>
+            <a href="/cart/">КОШИК</a>
+            <a href="/cabinet/">КАБІНЕТ</a>
+        </nav>
+        <hr>
+        <span id="license">© 2025 Drones Всі права захищені.</span>
+        <div id="footer-elipse"></div>
+    </footer>
+    {% block scripts%}
+    {% endblock %}
+</body>
+</html>
