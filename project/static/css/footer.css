@@ -16,11 +16,12 @@ footer{
     height: 835px;
     background-color: white;
     border-radius: 100%;
+    z-index: 2;
 }
 
 #site-info{
     position:absolute;
-    z-index: 1;
+    z-index: 3;
     display: flex;
     flex-direction: row;
     gap:180px;
@@ -38,4 +39,31 @@ footer{
 #site-info div h1{
     font-size: 44px ;
     font-weight: bold;
+}
+
+#footer-links{
+    display: flex;
+    flex-direction: row;
+    gap: 27px;
+    position: absolute;
+    top: 620px;
+}
+#footer-links a{
+    color: #0C122A;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+footer hr{
+    background-color: #F4F4F4;
+    position: absolute;
+    top: 790px;
+    width: 90%;
+}
+
+#license{
+    color: #9EA0AA;
+    position: absolute;
+    top: 814px;
+    font-size: 16px;
 }

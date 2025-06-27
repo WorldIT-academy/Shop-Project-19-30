@@ -1,0 +1,18 @@
+#footer-title{
+    position: absolute;
+    top: 290px;
+    width: 70%;
+    max-width: 1000px;
+    min-width: 850px;
+}
+
+#footer-title-elipse{
+    width: 77%;
+    height: 240px;
+    position: absolute;
+    background-color: #CDD5DD;
+    top: 122px;
+    z-index: 1;
+    border-radius: 100%;
+}
+
