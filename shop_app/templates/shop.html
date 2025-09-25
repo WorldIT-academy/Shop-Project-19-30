@@ -16,6 +16,14 @@
     </form>
 {% endif %}
 
+<select> 
+    <option>Усі</option>
+    {%for product in products%}
+        <option>{{product.type  }}</option>
+    {% endfor %}
+</select>
+
+<button id="filter" >filter</button>
 {% for product in products %}
     <hr>
     <h1>Назва - {{ product.name }}</h1>
@@ -36,6 +44,7 @@
 {% block scripts %}
 <!-- Для подключения js в html нужно использовать тег script -->
 <!--{# <script src="{{ url_for(путь)}}"></script>#} -->
-  
+<script  src="{{url_for('shop.static', filename = 'js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ url_for('shop.static', filename = 'js/add_product.js') }}"></script>
+<script src="{{ url_for('shop.static', filename = 'js/filter.js') }}"></script>
 {% endblock %}

@@ -7,5 +7,6 @@ class Product(DATABASE.Model):
     price = DATABASE.Column(DATABASE.Float, nullable=False)
     count = DATABASE.Column(DATABASE.Integer)
     discount = DATABASE.Column(DATABASE.Float)
-
+    type = DATABASE.Column(DATABASE.String)
+    
 
