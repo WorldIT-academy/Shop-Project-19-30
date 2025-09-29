@@ -1,7 +1,7 @@
 import flask, flask_login, os
 from .models import *
 
-def render_home():
+def render_shop():
     products = Product.query.all()
     is_admin = False
     if flask_login.current_user.is_authenticated and flask_login.current_user.is_admin:
@@ -46,3 +46,18 @@ def add_product():
         cookies += "|" + id
         response.set_cookie("list_products", cookies)
     return response
+
+def filter_product():
+    # flask.request.get_data(as_text=True) - отримує дані з клієнта (ajax)
+    product_type = flask.request.get_data(as_text=True)
+    if product_type != "Усі":
+        filter_list_of_products = []
+        list_of_products = Product.query.filter_by(type = product_type)
+        for product in list_of_products:
+            filter_list_of_products.append({
+                "name": product.name,
+                "price": product.price
+            })
+            # відправити іншу інформацію
+
+        return filter_list_of_products

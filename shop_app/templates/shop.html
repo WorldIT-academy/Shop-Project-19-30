@@ -16,29 +16,31 @@
     </form>
 {% endif %}
 
-<select> 
+<select id = "type-product"> 
     <option>Усі</option>
-    {%for product in products%}
+    {%for product in products %}
         <option>{{product.type  }}</option>
     {% endfor %}
 </select>
 
 <button id="filter" >filter</button>
-{% for product in products %}
-    <hr>
-    <h1>Назва - {{ product.name }}</h1>
-    <h2>Ціна - {{ product.price}} $</h2>
-    <h2>Знижка - {{ product.discount}}%</h2>
-    <h3>Кількість - {{product.count}}</h3>
-    <!-- <a href="/buy_product/?id={{ product.id }}"> -->
-    <button class="buy-buttons" id = "{{product.id}}">Купити</button>
-    <!-- </a> -->
-    <p>Опис - {{ product.description }}</p>
-    <img src="{{ url_for('shop.static', filename = 'images/products/'+product.name + '.png') }}" alt="">
-    {% if is_admin %}
-        <a href="/delete_product/?id={{ product.id }}"><button>Видалити товар</button></a>
-    {% endif%}
-{% endfor %}
+<div id="products">
+    {% for product in products %}
+        <hr>
+        <h1>Назва - {{ product.name }}</h1>
+        <h2>Ціна - {{ product.price}} $</h2>
+        <h2>Знижка - {{ product.discount}}%</h2>
+        <h3>Кількість - {{product.count}}</h3>
+        <!-- <a href="/buy_product/?id={{ product.id }}"> -->
+        <button class="buy-buttons" id = "{{product.id}}">Купити</button>
+        <!-- </a> -->
+        <p>Опис - {{ product.description }}</p>
+        <img src="{{ url_for('shop.static', filename = 'images/products/'+product.name + '.png') }}" alt="">
+        {% if is_admin %}
+            <a href="/delete_product/?id={{ product.id }}"><button>Видалити товар</button></a>
+        {% endif%}
+    {% endfor %}
+</div>
 {% endblock %}
 
 {% block scripts %}

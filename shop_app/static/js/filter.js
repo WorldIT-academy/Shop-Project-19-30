@@ -1,9 +1,15 @@
-// jQuery 
 $(document).ready(function(){
-    $('#filter').on('click',function(){
-        
-    })
+    $('#filter').on('click', function(){
+       $.ajax({
+            contentType: "aplication/json",
+            url: "/shop/filter",
+            type: "post",
+            data: $("#type-product").val(),
+            success: function(response){
+                // видалити усі минулі товари
 
-    // $('селектор') - звертається до елементу
-    // .on('', function) - виконує функцію в разі здійснення події
+                // створити нові товари з response
+            }
+       })
+    })
 })
